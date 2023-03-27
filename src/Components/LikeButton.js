@@ -71,15 +71,16 @@ function LikeButton() {
   };
 
   return (
-    <div className='flex p-1 mt-3 justify-between items-center w-full'>
+    <div className='flex p-1 mt-3 justify-between items-center w-full text-blue-900 text-xs'>
       <button
-        className={liked ? 'p-0 m-0 liked text-xs flex gap-1 text-black' : 'm-0 p-0 like text-xs flex gap-1 text-black'}
+      unselectable='on'
+        className={liked ? 'p-0 m-0 liked text-xs flex  select-none flex-col justify-center items-center text-center text-blue-900 drop-shadow-md' : 'm-0 p-0 like text-xs flex gap-1 text-blue-900 drop-shadow-md select-none flex-col justify-center items-center text-center'}
         onClick={!animating && !liked ? handleLike : null}
       >
-        <img src={heartIcon} alt="Heart Icon" className="heart" />
-        {count} likes
+        <img src={heartIcon} alt="Heart Icon" className="heart flex" />
+        <p>{count} likes</p>
       </button>
-      <div className="views text-xs text-blue-900">{views} views</div>
+      <div className="views select-none font-bold rounded-full p-1 bottom-0 right-0 relative flex-col flex drop-shadow-md" unselectable='on'><span>👀</span> {views} views </div>
     </div>
   );
 }

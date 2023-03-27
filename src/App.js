@@ -42,7 +42,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPicIndex((currentPicIndex + 1) % profilePics.length);
-    }, 500);
+    }, 1000);
     return () => clearInterval(interval);
   }, [currentPicIndex, profilePics.length]);
 
@@ -86,21 +86,21 @@ function App() {
   };
 
   return (
-    <main className="bg-black text-white backdrop-blur-sm  flex justify-center items-center min-h-screen top-0 left-0 ">
+    <main className="bg-black text-white backdrop-blur-sm  flex justify-center items-center min-h-screen top-0 left-0">
       <div style={backgroundStyle} className="backdrop-blur-lg"/>
-      <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-6 m-12 rounded-lg shadow-lg shadow-black  border border-blue-300 z-10">
+      <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-6 m-12 rounded-lg shadow-lg shadow-black border border-blue-400 border-t-white border-r-white  z-10">
         <a
           href="https://instagram.com/solo_perfecto24"
           alt="alternate account"
           target="_blank"
           rel="noreferrer"
         >
-          <div className="flex justify-center items-center p-16 w-32 rounded-full  bg-gradient-to-tl from-blue-900 via-cyan-900 to-sky-800 shadow-md shadow-gray-500">
+          <div className="flex justify-center items-center p-16 w-32 rounded-full">
             <img
               className={`w-32 h-32 rounded-full absolute p-1  ${
                 currentPicIndex === 0
-                  ? "opacity-100 " //transition-opacity duration-1000 bg-gradient-to-tl from-blue-700 to-blue-400 shadow-inner shadow-black
-                  : "opacity-100 bg-sky-100 shadow-lg shadow-blue-100 backdrop-blur-lg"
+                  ? "transition ease-in-out duration-700 opacity-100  bg-gradient-to-tl from-blue-900 via-cyan-900 to-sky-800 shadow-lg shadow-gray-500 border-blue-500 border" //transition-opacity duration-1000 bg-gradient-to-tl from-blue-700 to-blue-400 shadow-inner shadow-black
+                  : "transition ease-in-out duration-300 opacity-100 bg-sky-100 shadow-lg shadow-blue-100 border"
               }`}
               src={profilePics[currentPicIndex]}
               alt="Profile 1"
@@ -117,7 +117,7 @@ function App() {
           rel="noreferrer"
           alt="Instagram"
         >
-          <p className="text-sky-700 mt-2  ">@johnwick4learning</p>
+          <p className="text-white mt-4 bg-blue-900 w-full flex px-4 rounded-full py-1 transition ease-in-out duration-1000 font-mono text-sm">@johnwick4learning</p>
         </a>
         
         <ul className="font-mono tracking-widest mt-6 text-center w-60 grid grid-cols-3 gap-3">
@@ -135,7 +135,7 @@ function App() {
             </li>
           ))}
         </ul>
-        <Heart />
+        <Heart/>
       </div>
       <div></div>
     </main>
