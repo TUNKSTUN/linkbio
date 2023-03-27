@@ -4,7 +4,7 @@
 Link-Bio is a personal mini webpage that can be used to show collection of links to various social media profiles, websites, and other web content. It is designed to be used as a bio link page, where we could add it to our social media profiles to provide easy access to their other web content.
 
 <p align="center">
-  <img src="./video-linkbio" alt="hero"/>
+  <img src="https://github.com/TUNKSTUN/linkbio/blob/master/video-linkbio.gif" alt="hero"/>
 </p>
 
 
