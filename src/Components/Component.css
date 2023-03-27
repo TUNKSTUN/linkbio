@@ -1,0 +1,102 @@
+button {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button.liked {
+    background-color: transparent;
+  }
+  
+  button:active {
+    transform: translateY(2px);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  button .heart {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  button.liked .heart {
+    fill: #ff2d55;
+    animation: heartbeat 0.5s ease-in-out ;
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+    
+  }
+
+  .github-star-button {
+    display: inline-block;
+    position: relative;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .github-star-button:hover {
+    background-color: #1a1a1a;
+  }
+  
+  .github-star-button:focus {
+    outline: none;
+  }
+  
+  .github-star-button:active {
+    transform: translateY(2px);
+  }
+  
+  .github-star-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .github-star-button .star {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .github-star-button.starred .star {
+    fill: #ffac33;
+  }
+  
+  .github-star-button .star-count {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+  
+  
+

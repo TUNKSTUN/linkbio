@@ -1,70 +1,41 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🔗 Link-Bio
 
-## Available Scripts
+Link-Bio is a personal mini webpage that can be used to show collection of links to various social media profiles, websites, and other web content. It is designed to be used as a bio link page, where we could add it to our social media profiles to provide easy access to their other web content.
 
-In the project directory, you can run:
+<p align="center">
+    <img src=""/>
+</p>
 
-### `npm start`
+The webpage is built using React and utilizes the GitHub API to retrieve the user's GitHub profile information and repository data. added up to 6 links to their Link-Bio page, along with a profile picture and a name.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Link-Bio page is fully responsive, ensuring that it can be viewed on any device.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To use Link-Bio, simply change the link in the code to your social media profiles or website. Visitors to your page will then be able to easily access all of your other web content in one convenient location.
 
-### `npm test`
+## 🚀 Features:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Easy to use and customize
+-   Integrates with the GitHub API to display profile information and repository data
+-   Allows up to 6 links to be added with icons and custom labels
+-   Customizable background color and font
+-   Fully responsive design
 
-### `npm run build`
+## 🔧 Installation:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  Clone the repository.
+2.  Run `npm install` to install the necessary dependencies.
+3.  Update the `src/config.js` file with your own GitHub API token.
+4.  Run `npm start` to start the development server.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 👨‍💻 Technologies Used:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   React
+-   Axios
+-   GitHub API
+-   CSS
+-   HTML
 
-### `npm run eject`
+## 👥 Credits:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Created by Yahya - 

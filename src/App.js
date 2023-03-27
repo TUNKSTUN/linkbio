@@ -95,7 +95,7 @@ function App() {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="flex justify-center items-center p-16 w-32 rounded-full">
+          <div className="flex justify-center items-center p-16 w-28 rounded-full">
             <img
               className={`w-32 h-32 rounded-full absolute p-1  ${
                 currentPicIndex === 0

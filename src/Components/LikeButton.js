@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import heartIcon from "../Assets/heart.png";
-import "./LikeButton.css";
+import "./Component.css";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue, set, increment } from "firebase/database";
-
+import GitHubStarButton from "./GitHubStarButton";
 const firebaseConfig = {
   apiKey: "AIzaSyCmacK5JzeuolOM_3GYtvZ7hWvWRIH2QI0",
   authDomain: "linkbio-instagram-101.firebaseapp.com",
@@ -71,7 +70,7 @@ function LikeButton() {
   };
 
   return (
-    <div className="flex mt-5 justify-between items-center text-blue-900 text-xs w-full h-full">
+    <div className="flex mt-5 justify-between items-center text-blue-900 text-xs w-full h-auto">
       <button
         unselectable="on"
         className={
@@ -81,11 +80,12 @@ function LikeButton() {
         }
         onClick={!animating && !liked ? handleLike : null}
       >
-        <div className="heart select-none font-bold text-xs rounded-full top-0 right-0 flex-col flex drop-shadow-md p-0 m-0 justify-center items-center">
-          <p className="text-base  drop-shadow-sm">❤️</p>
+        <div className="heart select-none font-bold text-xs rounded-full flex-col flex drop-shadow-md p-1 m-[2px] justify-center items-center">
+          <p className="text-base drop-shadow-sm">❤️</p>
         </div>
-          <p>{count} likes</p>
+        <p>{count} likes</p>
       </button>
+        <GitHubStarButton owner="tunkstun" repo="linkbio"/>
       <div
         className="views select-none font-bold rounded-full top-0 right-0 flex-col flex drop-shadow-md p-0 m-0 justify-center items-center"
         unselectable="on"
