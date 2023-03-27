@@ -4,7 +4,7 @@
 Link-Bio is a personal mini webpage that can be used to show collection of links to various social media profiles, websites, and other web content. It is designed to be used as a bio link page, where we could add it to our social media profiles to provide easy access to their other web content.
 
 <p align="center">
-    <img src=""/>
+    <img src="https://github.com/TUNKSTUN/linkbio/blob/master/link-bio.png" alt="hero"/>
 </p>
 
 The webpage is built using React and utilizes the GitHub API to retrieve the user's GitHub profile information and repository data. added up to 6 links to their Link-Bio page, along with a profile picture and a name.
