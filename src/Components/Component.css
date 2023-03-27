@@ -64,10 +64,6 @@ button {
     transition: all 0.3s ease-in-out;
   }
   
-  .github-star-button:hover {
-    background-color: #1a1a1a;
-  }
-  
   .github-star-button:focus {
     outline: none;
   }
