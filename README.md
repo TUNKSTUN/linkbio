@@ -4,10 +4,7 @@
 Link-Bio is a personal mini webpage that can be used to show collection of links to various social media profiles, websites, and other web content. It is designed to be used as a bio link page, where we could add it to our social media profiles to provide easy access to their other web content.
 
 <p align="center">
-  <video width="500" height="300" controls loop>
-    <source src="./video-linkbio.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="./video-linkbio" alt="hero"/>
 </p>
 
 
