@@ -17,7 +17,7 @@ To use Link-Bio, simply change the link in the code to your social media profile
 ## 🚀 Features:
 
 -   Easy to use
--   Integrates with the GitHub API to display profile information and repository data
+-   Integrates with the GitHub API to display repo information (linkbio)
 -   Fully responsive design
 
 ## 🔧 Installation:
