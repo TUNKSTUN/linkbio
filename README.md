@@ -19,6 +19,7 @@ To use Link-Bio, simply change the link in the code to your social media profile
 -   Easy to use
 -   Integrates with the GitHub API to display repo information (linkbio)
 -   Fully responsive design
+-   Gyro Background Movement
 
 ## 🔧 Installation:
 
