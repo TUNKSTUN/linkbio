@@ -88,7 +88,7 @@ function App() {
   return (
     <main className="bg-black text-white backdrop-blur-sm  flex justify-center items-center min-h-screen top-0 left-0">
       <div style={backgroundStyle} className="backdrop-blur-lg"/>
-      <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-6 m-12 rounded-lg shadow-lg shadow-black border border-blue-400 border-t-white border-r-white  z-10">
+      <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-4 m-12 rounded-lg shadow-lg shadow-black border border-blue-400 border-t-white border-r-white  z-10">
         <a
           href="https://instagram.com/solo_perfecto24"
           alt="alternate account"
@@ -117,7 +117,7 @@ function App() {
           rel="noreferrer"
           alt="Instagram"
         >
-          <p className="text-white mt-4 bg-blue-900 w-full flex px-4 rounded-full py-1 transition ease-in-out duration-1000 font-mono text-sm">@johnwick4learning</p>
+          <p className="text-white mt-4 bg-blue-900 w-full flex px-4 rounded-full py-1 transition ease-in-out duration-1000 select-none font-mono text-sm">@johnwick4learning</p>
         </a>
         
         <ul className="font-mono tracking-widest mt-6 text-center w-60 grid grid-cols-3 gap-3">
