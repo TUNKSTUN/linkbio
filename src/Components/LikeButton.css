@@ -1,0 +1,52 @@
+button {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button.liked {
+    background-color: transparent;
+  }
+  
+  button:active {
+    transform: translateY(2px);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  button .heart {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button.liked .heart {
+    fill: #ff2d55;
+    animation: heartbeat 1s ease-in-out ;
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+

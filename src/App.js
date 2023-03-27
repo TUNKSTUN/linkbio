@@ -1,32 +1,51 @@
 // App.js
-import { useState, useEffect } from 'react';
-import './App.css';
-import profilePic1 from './Assets/profile-1.jpg';
-import profilePic2 from './Assets/profile-2.jpg';
-import profilePic3 from './Assets/profile-3.jpg';
+import { useState, useEffect } from "react";
+import "./App.css";
+import profilePic1 from "./Assets/profile-1.jpg";
+import Heart from "./Components/LikeButton";
+import { FaGithubSquare,FaSnapchatSquare, FaLinkedin } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { BsFillPenFill } from "react-icons/bs";
+import { AiFillMail } from "react-icons/ai";
 
 function App() {
-  const pageTitle = 'Yahya | Network Engineer';
+  const pageTitle = "Yahya Khan";
 
   const links = [
-    { name: 'GitHub', url: 'https://github.com/tunkstun' },
-    { name: 'Portfolio', url: 'https://tunkstun.web.app' },
-    { name: 'Contact', url: 'mailto:johnwick4learning@gmail.com' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/yahya24' },
-    { name: 'Blog', url: 'https://ethichax.web.app' },
+    {
+      name: <FaGithubSquare />,
+      url: "https://github.com/tunkstun",
+      title: "Github",
+    },
+    {
+      name: <FaLinkedin />,
+      url: "https://linkedin.com/in/yahya24",
+      title: "LinkedIn",
+    },
+    { name: <MdWork />, url: "https://tunkstun.web.app", title: "Portfolio" },
+    { name: <BsFillPenFill />, url: "https://ethichax.web.app", title: "Blog" },
+    {
+      name: <AiFillMail />,
+      url: "mailto:johnwick4learning@gmail.com",
+      title: "Contact",
+    },
+    {
+      name: <FaSnapchatSquare />,
+      url: "https://www.snapchat.com/add/aladin0.0152?share_id=tdEOrv1KMXE&locale=en-IN",
+      title: "Github",
+    },
   ];
 
   const [currentPicIndex, setCurrentPicIndex] = useState(0);
-  const profilePics = [profilePic1, profilePic2, profilePic3];
+  const profilePics = [profilePic1, profilePic1];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPicIndex((currentPicIndex + 1) % profilePics.length);
-    }, 3000);
+    }, 500);
     return () => clearInterval(interval);
   }, [currentPicIndex, profilePics.length]);
 
-  
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
 
@@ -36,59 +55,89 @@ function App() {
       const y = event.beta; // vertical tilt
 
       // calculate the new position of the background based on device orientation
-      const newTranslateX = -x / 3; // divide by 3 for slower movement
-      const newTranslateY = -y / 3;
+      const newTranslateX = -x / 4; // divide by 3 for slower movement
+      const newTranslateY = -y / 4;
 
       // update the transform property with the new position
       setTranslateX(newTranslateX);
       setTranslateY(newTranslateY);
     }
 
-    window.addEventListener('deviceorientation', handleOrientation);
+    window.addEventListener("deviceorientation", handleOrientation);
 
     return () => {
-      window.removeEventListener('deviceorientation', handleOrientation);
+      window.removeEventListener("deviceorientation", handleOrientation);
     };
   }, []);
 
   const backgroundStyle = {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     zIndex: 0,
-    backgroundImage: "url('https://www.thisiscolossal.com/wp-content/uploads/2019/02/moon_crop.jpg')",
-    backgroundSize: 'cover',
+    backgroundImage:
+      "url('https://www.thisiscolossal.com/wp-content/uploads/2019/02/moon_crop.jpg')",
+    backgroundSize: "cover",
+    backgroundClip: "content-box", // or 'padding-box
     transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
-    transition: 'transform 0.1s ease-out',
+    transition: "transform 0.1s ease-out",
   };
 
   return (
-    <main className="bg-black text-white backdrop-blur-sm flex justify-center items-center min-h-screen top-0 left-0 ">
-      <div style={backgroundStyle}/>
-      <div className="max-w-2xl mx-auto text-center bg-gradient-to-tr from-stone-800 via-gray-900 to-black p-6 m-12 rounded-lg shadow-lg shadow-black  border z-10">
-        <div className="flex justify-center items-center p-20">
-          <img className={`w-32 h-32 rounded-full mr-4 transition-opacity duration-1000 absolute border-4 border-blue p-2 ${currentPicIndex === 0 ? 'opacity-0' : 'opacity-100'}`} 
-               src={profilePics[currentPicIndex]} alt="Profile 1" />
-          <img className={`w-32 h-32 rounded-full mr-4 transition-opacity duration-1000 absolute border-4 border-blue p-2 ${currentPicIndex === 1 ? 'opacity-0 ' : 'opacity-80'}`} 
-               src={profilePics[(currentPicIndex + 1) % profilePics.length]} alt="Profile 2" />
-          <img className={`w-32 h-32 rounded-full mr-4 transition-opacity duration-1000 absolute border-4 border-blue p-2${currentPicIndex === 2 ? 'opacity-0' : 'opacity-100'}`} 
-               src={profilePics[(currentPicIndex + 2) % profilePics.length]} alt="Profile 3" />
-        </div>
-          <h1 className="text-2xl text-gray-100 font-bold">{pageTitle}</h1>
-        <p className="text-gray-400 mt-2">@johnwick4learning</p>
-        <h2 className="text-lg font-semibold mt-4">Links:</h2>
-        <ul className="font-mono tracking-widest text-center p-2">
+    <main className="bg-black text-white backdrop-blur-sm  flex justify-center items-center min-h-screen top-0 left-0 ">
+      <div style={backgroundStyle} className="backdrop-blur-lg"/>
+      <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-6 m-12 rounded-lg shadow-lg shadow-black  border border-blue-300 z-10">
+        <a
+          href="https://instagram.com/solo_perfecto24"
+          alt="alternate account"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="flex justify-center items-center p-16 w-32 rounded-full  bg-gradient-to-tl from-blue-900 via-cyan-900 to-sky-800 shadow-md shadow-gray-500">
+            <img
+              className={`w-32 h-32 rounded-full absolute p-1  ${
+                currentPicIndex === 0
+                  ? "opacity-100 " //transition-opacity duration-1000 bg-gradient-to-tl from-blue-700 to-blue-400 shadow-inner shadow-black
+                  : "opacity-100 bg-sky-100 shadow-lg shadow-blue-100 backdrop-blur-lg"
+              }`}
+              src={profilePics[currentPicIndex]}
+              alt="Profile 1"
+            />
+          </div>
+        </a>
+        <br />
+        <h1 className="text-5xl text-blue-900 drop-shadow-lg" id="title">
+          {pageTitle}
+        </h1>
+        <a
+          href="https://www.instagram.com/johnwick4learning"
+          target="_blank"
+          rel="noreferrer"
+          alt="Instagram"
+        >
+          <p className="text-sky-700 mt-2  ">@johnwick4learning</p>
+        </a>
+        
+        <ul className="font-mono tracking-widest mt-6 text-center w-60 grid grid-cols-3 gap-3">
           {links.map((link, index) => (
             <li key={index}>
-              <a className="text-gray-800 w-full bg-stone-300 flex justify-center text-center shadow-sm shadow-green-800 my-2 py-1 rounded border transition ease-in-out duration-500 hover:rotate-1 hover:bg-stone-800 hover:border-green-200 hover:shadow-lg hover:text-white " href={link.url} target="_blank" rel="noreferrer">
+              <a
+                title={link.title}
+                className="text-blue-900 text-6xl flex-col w-auto p-1 items-center bg-white flex justify-center font-bold text-center shadow-md shadow-gray-500 rounded-xl transition ease-in-out duration-500 hover:scale-105 hover:bg-gradient-to-tr hover:from-blue-900 hover:via-cyan-900 hover:to-sky-800 hover:border-blue-200 hover:shadow-lg hover:shadow-gray-600 hover:text-white "
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {link.name}
               </a>
             </li>
           ))}
         </ul>
+        <Heart />
       </div>
+      <div></div>
     </main>
   );
 }
