@@ -16,10 +16,8 @@ To use Link-Bio, simply change the link in the code to your social media profile
 
 ## 🚀 Features:
 
--   Easy to use and customize
+-   Easy to use
 -   Integrates with the GitHub API to display profile information and repository data
--   Allows up to 6 links to be added with icons and custom labels
--   Customizable background color and font
 -   Fully responsive design
 
 ## 🔧 Installation:
@@ -36,6 +34,7 @@ To use Link-Bio, simply change the link in the code to your social media profile
 -   GitHub API
 -   CSS
 -   HTML
+-   Firebase
 
 ## 👥 Credits:
 
