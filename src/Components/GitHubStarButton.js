@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Component.css";
-
+const key = "Bearer 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";
 function GitHubStarButton({ owner, repo }) {
   const [isStarred, setIsStarred] = useState(false);
   const [starCount, setStarCount] = useState(0);
@@ -13,7 +13,7 @@ function GitHubStarButton({ owner, repo }) {
             `https://api.github.com/user/starred/${owner}/${repo}`,
             {
               headers: {
-                Authorization: `Bearer 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`,
+                Authorization: key,
               },
             }
           );
@@ -30,7 +30,7 @@ function GitHubStarButton({ owner, repo }) {
           `https://api.github.com/repos/${owner}/${repo}`,
           {
             headers: {
-              Authorization: `Bearer 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`,
+              Authorization: key,
             },
           }
         );
@@ -52,7 +52,7 @@ function GitHubStarButton({ owner, repo }) {
           `https://api.github.com/user/starred/${owner}/${repo}`,
           {
             headers: {
-              Authorization: `Bearer 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`,
+              Authorization:key,
             },
           }
         );
@@ -65,7 +65,7 @@ function GitHubStarButton({ owner, repo }) {
           null,
           {
             headers: {
-              Authorization: `Bearer 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`,
+              Authorization: key,
             },
           }
         );

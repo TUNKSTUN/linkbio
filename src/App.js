@@ -70,24 +70,8 @@ function App() {
     };
   }, []);
 
-  const backgroundStyle = {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    zIndex: 0,
-    backgroundImage:
-      "url('https://www.thisiscolossal.com/wp-content/uploads/2019/02/moon_crop.jpg')",
-    backgroundSize: "cover",
-    backgroundClip: "content-box", // or 'padding-box
-    transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
-    transition: "transform 0.1s ease-out",
-  };
-
   return (
-    <main className="bg-black text-white backdrop-blur-sm  flex justify-center items-center min-h-screen top-0 left-0">
-      <div style={backgroundStyle} className="backdrop-blur-lg"/>
+    <main className=" text-white flex justify-center items-center min-h-screen top-0 left-0">
       <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-4 m-12 rounded-lg shadow-lg shadow-black border border-blue-400 border-t-white border-r-white  z-10">
         <a
           href="https://instagram.com/solo_perfecto24"

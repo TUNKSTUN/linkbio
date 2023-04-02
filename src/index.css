@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: black;
+body {
+  perspective: 1000px;
+  background-image: url("https://images3.alphacoders.com/117/1178933.jpg");
+  background-size: cover;
+  background-position: center;
+  display: "fixed";
+  position: "absolute";
+  top: 0;
+  left: 0;
+  width: "100%";
+  height: "100%";
+  z-index: 0;
+  background-Clip: "content-box"; 
+  transform: "translate3d(${translateX}px, ${translateY}px, 0)";
+  transition: "transform 0.1s ease-out";
 }
-
