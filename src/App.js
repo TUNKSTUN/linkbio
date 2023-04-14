@@ -37,6 +37,7 @@ function App() {
   ];
 
   const [currentPicIndex, setCurrentPicIndex] = useState(0);
+  const [Links, setLinks] = useState(0);
   const profilePics = [profilePic1, profilePic1];
 
   useEffect(() => {
@@ -45,6 +46,13 @@ function App() {
     }, 1000);
     return () => clearInterval(interval);
   }, [currentPicIndex, profilePics.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLinks((Links + 1) % profilePics.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [Links, profilePics.length]);
 
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
@@ -55,8 +63,8 @@ function App() {
       const y = event.beta; // vertical tilt
 
       // calculate the new position of the background based on device orientation
-      const newTranslateX = -x / 4; // divide by 3 for slower movement
-      const newTranslateY = -y / 4;
+      const newTranslateX = -x / 10; // divide by 3 for slower movement
+      const newTranslateY = -y / 10;
 
       // update the transform property with the new position
       setTranslateX(newTranslateX);
@@ -70,59 +78,75 @@ function App() {
     };
   }, []);
 
+  const backgroundStyle = {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 0,
+    backgroundsize: "cover",
+    backgroundclip: "content",
+    transform: `translate3d(${translateX}px, ${translateY + 1}px, 0)`,
+    transition: "transform 0.1s ease-in-out",
+  };
+
   return (
-    <main className=" text-white flex justify-center items-center min-h-screen top-0 left-0">
-      <div className="flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-4 m-12 rounded-lg shadow-lg shadow-black border border-blue-400 border-t-white border-r-white  z-10">
-        <a
-          href="https://instagram.com/solo_perfecto24"
-          alt="alternate account"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="flex justify-center items-center p-16 w-28 rounded-full">
-            <img
-              className={`w-32 h-32 rounded-full absolute p-1  ${
-                currentPicIndex === 0
-                  ? "transition ease-in-out duration-700 opacity-100  bg-gradient-to-tl from-blue-900 via-cyan-900 to-sky-800 shadow-lg shadow-gray-500 border-blue-500 border" //transition-opacity duration-1000 bg-gradient-to-tl from-blue-700 to-blue-400 shadow-inner shadow-black
-                  : "transition ease-in-out duration-300 opacity-100 bg-sky-100 shadow-lg shadow-blue-100 border"
+    <main className=" text-white   flex justify-center items-center min-h-screen top-0 left-0" style={backgroundStyle} >
+    <div  className={` flex flex-col justify-center items-center max-w-2xl mx-auto text-center bg-gradient-to-tr from-blue-400  via-gray-100 to-white animate-gradient p-4 m-12 rounded-lg shadow-lg shadow-black border border-blue-400 border-t-white border-r-white  z-10`}>
+      <a
+        href="https://instagram.com/solo_perfecto24"
+        alt="alternate account"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className="flex justify-center items-center p-16 w-28 rounded-full " >
+          <img
+            className={`w-32 h-32 rounded-full absolute p-1 ${
+              currentPicIndex === 0
+                ? "transition ease-in-out duration-700 delay-1000 opacity-100  bg-gradient-to-tl from-blue-900 via-cyan-900 to-sky-800 shadow-lg shadow-gray-500 border-blue-500 border" //transition-opacity duration-1000 bg-gradient-to-tl from-blue-700 to-blue-400 shadow-inner shadow-black
+                : "transition ease-in-out duration-300 opacity-100 bg-sky-100 shadow-lg shadow-blue-100 border"
+            }`}
+            src={profilePics[currentPicIndex]}
+            alt="Profile 1"
+          />
+        </div>
+      </a>
+      <br />
+      <h1 className="text-5xl text-blue-900 drop-shadow-lg" id="title">
+        {pageTitle}
+      </h1>
+      <a
+        href="https://www.instagram.com/johnwick4learning"
+        target="_blank"
+        rel="noreferrer"
+        alt="Instagram"
+      >
+        <p className="text-white mt-4 bg-blue-900 w-full flex px-4 rounded-full py-1 transition ease-in-out duration-1000 select-none font-mono text-sm">@johnwick4learning</p>
+      </a>
+      
+      <ul className="font-mono tracking-widest mt-6 text-center w-60 grid grid-cols-3 gap-3">
+        {links.map((link, index) => (
+          <li key={index}>
+            <a
+              title={link.title}
+              className={`bg-gradient-to-tr from-blue-900 via-cyan-900 to-sky-800 text-6xl flex-col w-auto p-1 items-center flex justify-center font-bold text-center shadow-md shadow-gray-500 text-gray-200  rounded-xl transition ease-in-out duration-500 hover:scale-105 border-blue-200 hover:shadow-lg hover:shadow-gray-600 hover:blur-0  hover:text-white hover:bg-gradient-to-tr hover:from-blue-700 hover:via-cyan-700 hover:to-sky-600 ${
+                Links === 0
+                  ? "transition ease-in-out duration-700 opacity-100 rotate-1 "
+                  : "transition ease-in-out duration-300 opacity-100 -rotate-1"
               }`}
-              src={profilePics[currentPicIndex]}
-              alt="Profile 1"
-            />
-          </div>
-        </a>
-        <br />
-        <h1 className="text-5xl text-blue-900 drop-shadow-lg" id="title">
-          {pageTitle}
-        </h1>
-        <a
-          href="https://www.instagram.com/johnwick4learning"
-          target="_blank"
-          rel="noreferrer"
-          alt="Instagram"
-        >
-          <p className="text-white mt-4 bg-blue-900 w-full flex px-4 rounded-full py-1 transition ease-in-out duration-1000 select-none font-mono text-sm">@johnwick4learning</p>
-        </a>
-        
-        <ul className="font-mono tracking-widest mt-6 text-center w-60 grid grid-cols-3 gap-3">
-          {links.map((link, index) => (
-            <li key={index}>
-              <a
-                title={link.title}
-                className="text-blue-900 text-6xl flex-col w-auto p-1 items-center bg-white flex justify-center font-bold text-center shadow-md shadow-gray-500 rounded-xl transition ease-in-out duration-500 hover:scale-105 hover:bg-gradient-to-tr hover:from-blue-900 hover:via-cyan-900 hover:to-sky-800 hover:border-blue-200 hover:shadow-lg hover:shadow-gray-600 hover:text-white "
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <Heart/>
-      </div>
-      <div></div>
-    </main>
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <Heart/>
+    </div>
+    <div></div>
+  </main>
   );
 }
 
