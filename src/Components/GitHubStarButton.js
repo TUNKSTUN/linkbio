@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Component.css";
-const key = "Bearer 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";
+const key = "Bearer {token}";
 function GitHubStarButton({ owner, repo }) {
   const [isStarred, setIsStarred] = useState(false);
   const [starCount, setStarCount] = useState(0);
